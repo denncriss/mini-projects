@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Poppins:wght@200;300;400;500;600;700&display=swap');
+:root {
+  --font: 'Manrope', sans-serif;
+
+  --primary: hsl(150, 100%, 66%);
+  --primary-10: rgba(82, 255, 168, 0.1);
+  --primary-30: rgba(82, 255, 168, 0.3);
+
+  --secondary100: hsl(193, 38%, 86%);
+  --secondary200: hsl(217, 28%, 71%);
+  --secondary300: hsl(217, 19%, 38%);
+  --secondary400: hsl(217, 19%, 24%);
+  --secondary500: hsl(218, 23%, 16%);
+
+  --secondary500-25: rgba(31, 38, 50, 0.25);
+  --secondary500-50: rgba(31, 38, 50, 0.5);
+
+  --danger: rgb(232, 64, 51);
+  --danger-10: rgb(232, 64, 51, 0.1);
+  --danger-30: rgb(232, 64, 51, 0.3);
+  --danger-50: rgb(232, 64, 51, 0.5);
+
+  --warning: rgba(242, 183, 7, 1);
+  --warning-10: rgba(242, 183, 7, 0.1);
+  --warning-30: rgba(242, 183, 7, 0.3);
+}

@@ -1,0 +1,23 @@
+@import './variables';
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  background-color: var(--secondary500);
+}
+/* mode: develop */
+.dev {
+  border: 1px solid red !important;
+}
