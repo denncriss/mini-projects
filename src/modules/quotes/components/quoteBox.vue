@@ -1,6 +1,6 @@
 <template>
   <article class="card">
-    <cite class="card__cite">{{ quote?.from }}</cite>
+    <cite class="card__cite">{{ quote?.from ?? 'anónimo' }}</cite>
     <blockquote class="card__quote">{{ quote?.quote }}</blockquote>
     <div class="divider">
       <IconPause class="divider__icon" />
@@ -41,7 +41,7 @@
     letter-spacing: 0.25rem;
     font-weight: 600;
     color: v-bind(color);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
   }
 
   .card__quote {
