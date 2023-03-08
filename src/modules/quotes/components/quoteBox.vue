@@ -14,8 +14,8 @@
 </template>
 
 <script setup>
-  import IconBolt from './icon/IconBolt.vue';
-  import IconPause from './icon/IconPause.vue';
+  import IconBolt from './icons/IconBolt.vue';
+  import IconPause from './icons/IconPause.vue';
   defineProps(['quote', 'color']);
   defineEmits(['changeQuote']);
 </script>
