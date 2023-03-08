@@ -5,6 +5,7 @@
 </template>
 
 <script setup>
+
   import { ref } from 'vue'
   import quotesData from '@/data/quotes.json'
   import QuoteBox from '@/components/quotes/quoteBox.vue'
