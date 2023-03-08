@@ -1,6 +1,6 @@
 <template>
   <section class="tasks-container">
-    <!-- targeta de formulario para crear una tarea -->
+    <!-- tarjeta de formulario para crear una tarea -->
     <CardTodoCreateOrUpdate
       :taskEdit="taskEdit"
       @add-task="addTask"
@@ -31,13 +31,13 @@
 </template>
 
 <script setup>
+  import TodoFilter from './components/TodoFilter.vue';
+  import TodoNotFoundItem from './components/TodoNotFoundItem.vue';
+  import TodoItem from './components/TodoItem.vue';
+  import CardTodosItemsBox from './components/CardTodosItemsBox.vue';
+  import CardTodosBox from './components/CardTodosBox.vue';
+  import CardTodoCreateOrUpdate from './components/CardTodoCreateOrUpdate.vue';
   import { ref, computed, watch, onMounted } from 'vue';
-  import CardTodoCreateOrUpdate from './CardTodoCreate.vue';
-  import CardTodosBox from './CardTodosBox.vue';
-  import TodoItem from './TodoItem.vue';
-  import TodoFilter from './TodoFilter.vue';
-  import TodoNotFoundItem from './TodoNotFoundItem.vue';
-  import CardTodosItemsBox from './CardTodosItemsBox.vue';
 
   const tasks = ref([]);
   const filterSelected = ref('all');

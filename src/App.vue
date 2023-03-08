@@ -2,14 +2,16 @@
   <section class="container">
     <!-- <Card /> -->
     <!-- <Quotes /> -->
-    <GithubUser />
+    <!-- <GithubUser /> -->
+    <Todo />
   </section>
 </template>
 
 <script setup>
   // import Card from '@/modules/card/Card.vue';
   // import Quotes from '@/modules/quotes/Quotes.vue';
-  import GithubUser from './modules/github-user/GithubUser.vue';
+  // import GithubUser from './modules/github-user/GithubUser.vue';
+  import Todo from './modules/todo/Todo.vue';
 </script>
 
 <style scoped>

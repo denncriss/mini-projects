@@ -7,7 +7,6 @@
       type="text" />
     <div class="buttons">
       <button
-        :disabled="(task.name == '')(task.name === taskEditLocal)"
         class="btn-icon"
         :class="[
           { disabled: (task.name == '') | (task.name === taskEditLocal) },
@@ -22,7 +21,7 @@
 
 <script setup>
   import { ref, watch, computed } from 'vue';
-  import IconSave from './icon/IconSave.vue';
+  import IconSave from './icons/IconSave.vue';
 
   const props = defineProps(['taskEdit']);
   const emit = defineEmits(['add-task', 'cancelEditTask']);

@@ -23,10 +23,10 @@
 </template>
 
 <script setup>
-  import IconCheckbox from './icon/IconCheckbox.vue';
-  import IconUpdate from './icon/IconUpdate.vue';
-  import IconDelete from './icon/IconDelete.vue';
-  import IconClose from './icon/IconClose.vue';
+  import IconCheckbox from './icons/IconCheckbox.vue';
+  import IconUpdate from './icons/IconUpdate.vue';
+  import IconDelete from './icons/IconDelete.vue';
+  import IconClose from './icons/IconClose.vue';
   defineProps(['task', 'taskEdit']);
   defineEmits(['toggleTask', 'removeTask', 'updateTask']);
 </script>
