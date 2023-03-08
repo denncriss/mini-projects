@@ -6,8 +6,8 @@
 
 <script setup>
   import { ref } from 'vue'
-  import quotesData from '@/data/quotes.json'
-  import QuoteBox from '@/components/quotes/quoteBox.vue'
+  import quotesData from './data/quotes.json'
+  import QuoteBox from './components/quoteBox.vue'
   import { getRandomColor, getRandomNumber } from '@/helpers'
 
   const quotes = quotesData

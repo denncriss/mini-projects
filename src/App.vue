@@ -1,11 +1,13 @@
 <template>
   <section class="container">
-    <Card />
+    <!-- <Card /> -->
+    <Quotes />
   </section>
 </template>
 
 <script setup>
-  import Card from './modules/card/Card.vue'
+  // import Card from '@/modules/card/Card.vue';
+  import Quotes from '@/modules/quotes/Quotes.vue';
 </script>
 
 <style scoped>
