@@ -1,13 +1,15 @@
 <template>
   <section class="container">
     <!-- <Card /> -->
-    <Quotes />
+    <!-- <Quotes /> -->
+    <GithubUser />
   </section>
 </template>
 
 <script setup>
   // import Card from '@/modules/card/Card.vue';
-  import Quotes from '@/modules/quotes/Quotes.vue';
+  // import Quotes from '@/modules/quotes/Quotes.vue';
+  import GithubUser from './modules/github-user/GithubUser.vue';
 </script>
 
 <style scoped>

@@ -7,7 +7,7 @@
     <div class="user__description">
       <h2 class="user__description-name">{{ user.name }}</h2>
       <p class="user__description-text">
-        {{ user.bio ?? '---no tiene descripcion---' }}
+        {{ user.bio ?? '---no tiene descripción---' }}
       </p>
     </div>
     <div class="user__info">
@@ -27,41 +27,19 @@
 
     <div class="user__social">
       <div class="user__social-item">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-5 w-5"
-          viewBox="0 0 20 20"
-          fill="currentColor"
-        >
-          <path
-            fill-rule="evenodd"
-            d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
-            clip-rule="evenodd"
-          />
-        </svg>
-        <span v-if="user.location === 'undefined' || !user.location">no definido</span>
-        <span v-else>{{ user.location }}</span>
+        <IconLocation />
+        <span>{{
+          user.location && user.location !== 'undefined' ? user.location : 'no definido'
+        }}</span>
       </div>
       <div class="user__social-item">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-5 w-5"
-          viewBox="0 0 20 20"
-          fill="currentColor"
-        >
-          <path
-            fill-rule="evenodd"
-            d="M12.586 4.586a2 2 0 112.828 2.828l-3 3a2 2 0 01-2.828 0 1 1 0 00-1.414 1.414 4 4 0 005.656 0l3-3a4 4 0 00-5.656-5.656l-1.5 1.5a1 1 0 101.414 1.414l1.5-1.5zm-5 5a2 2 0 012.828 0 1 1 0 101.414-1.414 4 4 0 00-5.656 0l-3 3a4 4 0 105.656 5.656l1.5-1.5a1 1 0 10-1.414-1.414l-1.5 1.5a2 2 0 11-2.828-2.828l3-3z"
-            clip-rule="evenodd"
-          />
-        </svg>
+        <IconLink />
         <a
-          :href="user.blog"
           v-if="user.blog"
+          :href="user.blog"
           rel="noopener noreferrer"
           target="_blank"
-          class="user__link-blog"
-        >
+          class="user__link-blog">
           {{ user.blog }}
         </a>
         <p v-else>url no definido</p>
@@ -74,23 +52,18 @@
 </template>
 
 <script setup>
-  defineProps(['user'])
+  import IconLink from './icons/IconLink.vue';
+  import IconLocation from './icons/IconLocation.vue';
+  defineProps(['user']);
 </script>
 
 <style scoped>
   .user {
-    max-width: 30rem;
     width: 100%;
     padding: 1.2rem;
     background-color: var(--secondary400);
     border-radius: 0.5rem;
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
-  }
-  @media (min-width: 768px) {
-    .user {
-      width: auto;
-      min-width: 30rem;
-    }
   }
   .user__img-box {
     width: 100%;
