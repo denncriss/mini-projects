@@ -9,6 +9,7 @@
   --secondary100: hsl(193, 38%, 86%);
   --secondary200: hsl(217, 28%, 71%);
   --secondary300: hsl(217, 19%, 38%);
+  --secondary300-50: rgba(78, 93, 115, 0.5);
   --secondary400: hsl(217, 19%, 24%);
   --secondary500: hsl(218, 23%, 16%);
 
