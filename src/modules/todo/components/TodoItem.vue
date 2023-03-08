@@ -2,16 +2,14 @@
   <div
     class="task-item"
     :class="{ 'task-completed': task.completed }"
-    @click="$emit('toggleTask', task.id)"
-  >
+    @click="$emit('toggleTask', task.id)">
     <IconCheckbox class="task-icon" :active="task.completed" />
     <span class="task-text">{{ task.name }}</span>
     <div class="btn-actions-box">
       <button
         v-if="task?.id !== taskEdit?.id"
         class="btn-icon btn-icon__edit"
-        @click.stop="$emit('updateTask', task)"
-      >
+        @click.stop="$emit('updateTask', task)">
         <IconUpdate class="icon-actions" />
       </button>
       <button v-else class="btn-icon btn-icon__close" @click.stop="$emit('updateTask', {})">
@@ -25,12 +23,12 @@
 </template>
 
 <script setup>
-  import IconCheckbox from './icon/IconCheckbox.vue'
-  import IconUpdate from './icon/IconUpdate.vue'
-  import IconDelete from './icon/IconDelete.vue'
-  import IconClose from './icon/IconClose.vue'
-  defineProps(['task', 'taskEdit'])
-  defineEmits(['toggleTask', 'removeTask', 'updateTask'])
+  import IconCheckbox from './icon/IconCheckbox.vue';
+  import IconUpdate from './icon/IconUpdate.vue';
+  import IconDelete from './icon/IconDelete.vue';
+  import IconClose from './icon/IconClose.vue';
+  defineProps(['task', 'taskEdit']);
+  defineEmits(['toggleTask', 'removeTask', 'updateTask']);
 </script>
 
 <style scoped>

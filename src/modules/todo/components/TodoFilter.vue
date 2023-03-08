@@ -6,32 +6,31 @@
       :style="notTasks && { opacity: '0.5', cursor: 'default' }"
       :class="{ 'btn-active': filterSelected === filter && !notTasks }"
       :key="filter.id"
-      @click="changeFilter(filter)"
-    >
+      @click="changeFilter(filter)">
       <span>{{ translateFilterName(filter) }}</span>
     </a>
   </div>
 </template>
 
 <script setup>
-  import { computed } from 'vue'
-  const props = defineProps(['filterSelected', 'tasks', 'notTasks'])
-  const emit = defineEmits(['changeFilterSelected'])
+  import { computed } from 'vue';
+  const props = defineProps(['filterSelected', 'tasks', 'notTasks']);
+  const emit = defineEmits(['changeFilterSelected']);
 
-  const filters = ['all', 'active', 'completed']
+  const filters = ['all', 'active', 'completed'];
 
   const translateFilterName = computed(() => (filtertext) => {
-    if (filtertext === 'all') return 'todos'
-    if (filtertext === 'active') return 'activos'
-    if (filtertext === 'completed') return 'completados'
-    return ''
-  })
+    if (filtertext === 'all') return 'todos';
+    if (filtertext === 'active') return 'activos';
+    if (filtertext === 'completed') return 'completados';
+    return '';
+  });
 
   const changeFilter = (filter) => {
     if (!props.notTasks) {
-      emit('changeFilterSelected', filter)
+      emit('changeFilterSelected', filter);
     }
-  }
+  };
 </script>
 
 <style scoped>

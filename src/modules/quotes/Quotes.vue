@@ -5,19 +5,19 @@
 </template>
 
 <script setup>
-  import { ref } from 'vue'
-  import quotesData from './data/quotes.json'
-  import QuoteBox from './components/quoteBox.vue'
-  import { getRandomColor, getRandomNumber } from '@/helpers'
+  import { ref } from 'vue';
+  import quotesData from './data/quotes.json';
+  import QuoteBox from './components/quoteBox.vue';
+  import { getRandomColor, getRandomNumber } from '@/helpers';
 
-  const quotes = quotesData
-  const quote = ref({})
-  const color = ref('')
+  const quotes = quotesData;
+  const quote = ref({});
+  const color = ref('');
 
   const generateNewQuote = () => {
-    const randomIndex = getRandomNumber(quotes.length)
-    quote.value = quotes[randomIndex]
-    color.value = getRandomColor()
-  }
-  generateNewQuote()
+    const randomIndex = getRandomNumber(quotes.length);
+    quote.value = quotes[randomIndex];
+    color.value = getRandomColor();
+  };
+  generateNewQuote();
 </script>

@@ -4,18 +4,16 @@
       placeholder="escribe la nueva tarea"
       class="input-task"
       v-model.trim="task.name"
-      type="text"
-    />
+      type="text" />
     <div class="buttons">
       <button
-        :disabled="(task.name == '') | (task.name === taskEditLocal)"
+        :disabled="(task.name == '')(task.name === taskEditLocal)"
         class="btn-icon"
         :class="[
           { disabled: (task.name == '') | (task.name === taskEditLocal) },
           { edit: buttonName === 'actualizar' },
-          { success: buttonName === 'guardar' }
-        ]"
-      >
+          { success: buttonName === 'guardar' },
+        ]">
         <IconSave class="btn-icon__svg" />
       </button>
     </div>
@@ -23,54 +21,54 @@
 </template>
 
 <script setup>
-  import { ref, watch, computed } from 'vue'
-  import IconSave from './icon/IconSave.vue'
+  import { ref, watch, computed } from 'vue';
+  import IconSave from './icon/IconSave.vue';
 
-  const props = defineProps(['taskEdit'])
-  const emit = defineEmits(['add-task', 'cancelEditTask'])
-  const taskEditLocal = ref(null)
+  const props = defineProps(['taskEdit']);
+  const emit = defineEmits(['add-task', 'cancelEditTask']);
+  const taskEditLocal = ref(null);
 
   const task = ref({
     id: null,
     name: '',
-    completed: false
-  })
-  const isEditing = ref(false)
+    completed: false,
+  });
+  const isEditing = ref(false);
 
   const buttonName = computed(() => {
-    if (isEditing.value) return 'actualizar'
-    if (!isEditing.value) return 'guardar'
-    return ''
-  })
+    if (isEditing.value) return 'actualizar';
+    if (!isEditing.value) return 'guardar';
+    return '';
+  });
 
   watch(
     () => props.taskEdit,
     () => {
       if (props.taskEdit.id) {
-        task.value = { ...props.taskEdit }
-        taskEditLocal.value = props.taskEdit.name
-        isEditing.value = true
+        task.value = { ...props.taskEdit };
+        taskEditLocal.value = props.taskEdit.name;
+        isEditing.value = true;
       } else {
-        clearTask()
+        clearTask();
       }
     }
-  )
+  );
 
   const addTask = () => {
-    if (task.value.name === '') return
-    task.value.id = task.value.id ?? new Date().getTime()
-    emit('add-task', task.value)
-    clearTask()
-  }
+    if (task.value.name === '') return;
+    task.value.id = task.value.id ?? new Date().getTime();
+    emit('add-task', task.value);
+    clearTask();
+  };
   const clearTask = () => {
-    isEditing.value = false
-    taskEditLocal.value = null
+    isEditing.value = false;
+    taskEditLocal.value = null;
     task.value = {
       id: null,
       name: '',
-      completed: false
-    }
-  }
+      completed: false,
+    };
+  };
 </script>
 
 <style scoped>

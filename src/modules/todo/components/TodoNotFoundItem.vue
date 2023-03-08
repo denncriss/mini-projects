@@ -19,8 +19,8 @@
 </template>
 
 <script setup>
-  import IconList from './icon/IconList.vue'
-  defineProps(['filterSelected'])
+  import IconList from './icon/IconList.vue';
+  defineProps(['filterSelected']);
 </script>
 
 <style scoped>
